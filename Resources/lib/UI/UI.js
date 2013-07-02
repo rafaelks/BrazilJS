@@ -60,6 +60,7 @@ exports.createWindow = function(dict) {
 
 exports.createView = function(dict) {
 	var defaults = {
+		height: Ti.UI.SIZE,
 		touchEnabled: !isAndroid
 	};
 
@@ -243,8 +244,7 @@ exports.createCachedImage = function(obj, dict) {
 
 exports.createMapView = function(dict) {
 	var defaults = {
-		animate: true,
-		userLocation: true
+		animate: true
 	};
 
 	var properties = _extend(defaults, dict);

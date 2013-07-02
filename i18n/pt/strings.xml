@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
 	<string name="talks">Palestras</string>
+	<string name="talk">Palestra</string>
 	<string name="favorites">Favoritas</string>
 	<string name="location">Local</string>
 	<string name="about">Sobre</string>
@@ -8,6 +9,7 @@
 	<string name="cancel">Cancelar</string>
 	<string name="close">Fechar</string>
 	<string name="yes">Sim</string>
+	<string name="developers">Desenvolvedores</string>
 	<string name="choice_route_app">Escolha um aplicativo abaixo</string>
 	<string name="ask_open_maps_title">Abrir Mapas?</string>
 	<string name="ask_open_maps_message">Deseja abrir o aplicativo Mapas?</string>
