@@ -1,5 +1,3 @@
-var Profile = require("/lib/Util/Profile");
-
 var PROTOCOL = "http://";
 var HOST = "braziljs-ws.herokuapp.com/";
 var API = "api/";
