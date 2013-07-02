@@ -6,41 +6,55 @@ exports.talk = function(obj) {
 	var self = UI.createTableViewRow({
 		className: "talk",
 		hasChild: true,
-		height: Ti.UI.SIZE
+		height: Ti.UI.SIZE,
+		obj: obj
 	});
 
-	var viewLabelsWrapper = UI.createView({
-		height: Ti.UI.SIZE,
-		layout: "vertical",
-		left: 10,
-		right: 50,
-		top: 10,
-		bottom: 10
-	});
-	self.add(viewLabelsWrapper);
-
-	// Talk title
-	viewLabelsWrapper.add( UI.createLabel({
-		font: { fontSize: 16, fontWeight: "bold" },
-		height: Ti.UI.SIZE,
-		left: 0,
-		text: i18n.getValue(obj.name)
+	self.add( UI.createImageView({
+		bottom: 8,
+		height: 50,
+		image: obj.image,
+		left: 8,
+		top: 8,
+		width: 50
 	}) );
 
-	// Speaker name
-	viewLabelsWrapper.add( UI.createLabel({
-		color: "#999",
-		font: { fontSize: 14 },
-		left: 0,
-		text: obj.speaker.name
+	// Talk title
+	self.add( UI.createLabel({
+		font: { fontSize: 16, fontWeight: "bold" },
+		height: Ti.UI.SIZE,
+		left: 66,
+		text: i18n.getValue(obj.name),
+		right: 45
 	}) );
 
 	self.add( UI.createLabel({
 		color: "#999",
-		font: { fontSize: 14 },
+		font: { fontSize: 12 },
 		height: Ti.UI.SIZE,
+		right: 5,
+		text: "09:00",
+		textAlign: "right"
+	}) );
+
+	return self;
+};
+
+
+exports.developer = function(name, twitter) {
+	var self = UI.createTableViewRow();
+
+	self.add( UI.createLabel({
+		left: 10,
+		text: name,
+		width: "47%"
+	}) );
+
+	self.add( UI.createLabel({
 		right: 10,
-		text: "09:00"
+		text: "@" + twitter,
+		textAlign: "right",
+		width: "47%"
 	}) );
 
 	return self;
