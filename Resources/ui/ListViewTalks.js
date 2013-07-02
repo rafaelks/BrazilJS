@@ -6,7 +6,7 @@ var ListViewTalks = function(dict) {
 	var rows = [];
 	var self = UI.createTableView();
 
-	self.addEventListener("open", function() {
+	dict.mainWindow.addEventListener("open", function() {
 		WSRequest.getTalks(function(data) {
 			data.forEach(function(talk) {
 				rows.push( new RowTalk(talk) );
