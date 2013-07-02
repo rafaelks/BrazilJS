@@ -5,7 +5,9 @@ var ApplicationWindow = function() {
 	var WinFavorites = require("/ui/WinFavorites");
 	var WinLocation = require("/ui/WinLocation");
 
-	var self = UI.createTabGroup();
+	var self = UI.createTabGroup({
+		activeTabIconTint: UI.BAR_COLOR
+	});
 
 	var tabTalks = Ti.UI.createTab({
 		icon: "/images/TabGroup-Talks.png",
