@@ -68,22 +68,22 @@ var request = function(dict) {
 	xhr.open(dict.type, serviceURL);
 
 	// Basic HTTP informations
-	xhr.setRequestHeader( "Accept-Language", Ti.App.Properties.getString("currentLanguage") );
+	xhr.setRequestHeader("Accept-Language", Ti.Locale.getCurrentLanguage());
 
 	// Include some Platform informations
-	xhr.setRequestHeader( "X-Platform", Ti.Platform.osname );
-	xhr.setRequestHeader( "X-App-Version", Ti.App.version );
+	xhr.setRequestHeader("X-Platform", Ti.Platform.osname);
+	xhr.setRequestHeader("X-App-Version", Ti.App.version);
 
 	if (dict.content === "json") {
-		xhr.setRequestHeader( "Content-Type", "application/json" );
-		dict.data = JSON.stringify( dict.data );
+		xhr.setRequestHeader("Content-Type", "application/json");
+		dict.data = JSON.stringify(dict.data);
 	}
 
 	if (typeof dict.headers !== "undefined") {
 		Ti.API.info( "HEADERS: ");
 		dict.headers.forEach(function(header) {
-			xhr.setRequestHeader( header.name, header.value );
-			console.log( header.name, header.value );
+			xhr.setRequestHeader(header.name, header.value);
+			console.log(header.name, header.value);
 		});
 	}
 
