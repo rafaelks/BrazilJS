@@ -1,4 +1,5 @@
 var UI = require("/lib/UI/UI");
+var i18n = require("/lib/i18n/Remote");
 
 
 exports.talk = function(obj) {
@@ -20,7 +21,7 @@ exports.talk = function(obj) {
 
 	// Talk title
 	viewLabelsWrapper.add( UI.createLabel({
-		text: obj.name
+		text: i18n.getValue(obj.name)
 	}) );
 
 	return self;
