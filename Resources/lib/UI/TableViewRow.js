@@ -13,7 +13,7 @@ exports.talk = function(obj) {
 		height: Ti.UI.SIZE,
 		layout: "vertical",
 		left: 10,
-		right: 10,
+		right: 50,
 		top: 10,
 		bottom: 10
 	});
@@ -21,7 +21,26 @@ exports.talk = function(obj) {
 
 	// Talk title
 	viewLabelsWrapper.add( UI.createLabel({
+		font: { fontSize: 16, fontWeight: "bold" },
+		height: Ti.UI.SIZE,
+		left: 0,
 		text: i18n.getValue(obj.name)
+	}) );
+
+	// Speaker name
+	viewLabelsWrapper.add( UI.createLabel({
+		color: "#999",
+		font: { fontSize: 14 },
+		left: 0,
+		text: obj.speaker.name
+	}) );
+
+	self.add( UI.createLabel({
+		color: "#999",
+		font: { fontSize: 14 },
+		height: Ti.UI.SIZE,
+		right: 10,
+		text: "09:00"
 	}) );
 
 	return self;
