@@ -8,7 +8,7 @@ var ApplicationWindow = function() {
 	var self = UI.createTabGroup();
 
 	var tabTalks = Ti.UI.createTab({
-		icon: "/images/ic_action_talks.png",
+		icon: "/images/TabGroup-Talks.png",
 		title: L("talks")
 	});
 	var winTalks = new WinTalks({ tab: tabTalks });
@@ -16,7 +16,7 @@ var ApplicationWindow = function() {
 	self.addTab(tabTalks);
 
 	var tabFavorites = Ti.UI.createTab({
-		icon: "/images/ic_action_talks.png",
+		icon: "/images/TabGroup-Favorites.png",
 		title: L("favorites")
 	});
 	var winFavorites = new WinFavorites({ tab: tabFavorites });
@@ -24,7 +24,7 @@ var ApplicationWindow = function() {
 	self.addTab(tabFavorites);
 
 	var tabLocation = Ti.UI.createTab({
-		icon: "/images/ic_action_talks.png",
+		icon: "/images/TabGroup-Location.png",
 		title: L("location")
 	});
 	var winLocation = new WinLocation({ tab: tabLocation });
