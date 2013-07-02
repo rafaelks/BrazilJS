@@ -1,5 +1,5 @@
 var isAndroid = (Ti.Platform.osname === "android");
-var BAR_COLOR = "#A6230D";
+var BAR_COLOR = "#B61E1C";
 exports.BAR_COLOR = BAR_COLOR;
 
 var Map;
@@ -135,8 +135,9 @@ exports.createTableViewSection = function(dict) {
 exports.createTableViewRow = function(dict) {
 	var dict = dict || {};
 	var defaults = {
-		color: "#464652",
-		height: 50
+		color: "#000",
+		height: 50,
+		selectedBackgroundColor: "#DDD"
 	};
 
 	var properties = _extend(defaults, dict);
