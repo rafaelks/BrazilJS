@@ -15,6 +15,11 @@ var WinLocation = function() {
 		mainWindow: self
 	}) );
 
+	buttonAbout.addEventListener("click", function() {
+		var WinAbout = require("/ui/WinAbout");
+		new WinAbout().open();
+	});
+
 	return self;
 };
 
