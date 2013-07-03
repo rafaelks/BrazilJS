@@ -1,8 +1,10 @@
 var WinTalk = function(dict) {
 	var UI = require("/lib/UI/UI");
 	var HeaderViewTalk = require("/ui/HeaderViewTalk");
+	var tab = dict.tab;
 	var obj = dict.obj || {};
 	var sections = [];
+	var selectedRow;
 
 	var buttonActions = Ti.UI.createButton({
 		systemButton: Ti.UI.iPhone.SystemButton.ACTION
@@ -15,7 +17,8 @@ var WinTalk = function(dict) {
 
 	var rowSpeaker = UI.createTableViewRow({
 		hasChild: true,
-		height: Ti.UI.SIZE
+		height: Ti.UI.SIZE,
+		obj: obj.speaker[0]
 	});
 
 	rowSpeaker.add( UI.createImageView({
@@ -59,6 +62,29 @@ var WinTalk = function(dict) {
 
 	buttonActions.addEventListener("click", function() {
 
+	});
+
+	tableView.addEventListener("click", function(e) {
+		if (e.index === 0) {
+			tableView.selectRow(e.index, { animated: false });
+			selectedRow = e.index;
+
+			var obj = e.rowData.obj;
+			var WinSpeaker = require("/ui/WinSpeaker");
+			tab.open( new WinSpeaker({
+				obj: obj,
+				tab: tab
+			}) );
+		}
+	});
+
+	self.addEventListener("focus", function() {
+		setTimeout(function() {
+			if (selectedRow != null) {
+				tableView.deselectRow(selectedRow, { animated: true });
+				selectedRow = null;
+			}
+		}, 200);
 	});
 
 	return self;
