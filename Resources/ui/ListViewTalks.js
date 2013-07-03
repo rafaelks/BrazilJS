@@ -14,20 +14,20 @@ var ListViewTalks = function(dict) {
 		// 	self.setData(rows);
 		// });
 
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Douglas.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Alexandre.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Angus.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Caridy.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Demian.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Jean.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Josh.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Marcel.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Renato.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Rey.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Robert.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Stoyan.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Thibault.png" }) );
-		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Zeno.png" }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Douglas.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Alexandre.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Angus.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Caridy.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Demian.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Jean.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Josh.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Marcel.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Renato.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Rey.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Robert.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Stoyan.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Thibault.png", speaker: [{ name: "Foobar" }] }) );
+		rows.push( new RowTalk({ name: { pt: "Lorem ipsum Eu laborum dolore enim." }, image: "/images/Zeno.png", speaker: [{ name: "Foobar" }] }) );
 		self.setData(rows);
 	});
 
