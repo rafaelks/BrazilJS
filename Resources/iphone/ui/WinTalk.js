@@ -4,7 +4,12 @@ var WinTalk = function(dict) {
 	var obj = dict.obj || {};
 	var sections = [];
 
+	var buttonActions = Ti.UI.createButton({
+		systemButton: Ti.UI.iPhone.SystemButton.ACTION
+	});
+
 	var self = UI.createWindow({
+		rightNavButton: buttonActions,
 		title: L("talk")
 	});
 
@@ -51,6 +56,10 @@ var WinTalk = function(dict) {
 		style: Ti.UI.iPhone.TableViewStyle.GROUPED
 	});
 	self.add(tableView);
+
+	buttonActions.addEventListener("click", function() {
+
+	});
 
 	return self;
 };
