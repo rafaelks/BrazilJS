@@ -56,7 +56,9 @@
             <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
         </manifest>
     </android>
-    <modules/>
+    <modules>
+        <module platform="iphone" version="1.6.2">dk.napp.social</module>
+    </modules>
     <deployment-targets>
         <target device="android">true</target>
         <target device="blackberry">false</target>
