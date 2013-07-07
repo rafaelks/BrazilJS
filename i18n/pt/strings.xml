@@ -9,6 +9,7 @@
 	<string name="cancel">Cancelar</string>
 	<string name="close">Fechar</string>
 	<string name="yes">Sim</string>
+	<string name="and">e</string>
 	<string name="developers">Desenvolvedores</string>
 	<string name="choice_route_app">Escolha um aplicativo abaixo</string>
 	<string name="ask_open_maps_title">Abrir Mapas?</string>

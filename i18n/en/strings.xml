@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-	<string name="welcome">Welcome to %s!</string>
+	<string name="talks">Talks</string>
+	<string name="talk">Talk</string>
+	<string name="location">Location</string>
+	<string name="about">About</string>
+	<string name="maps">Map</string>
+	<string name="cancel">Cancel</string>
+	<string name="close">Close</string>
+	<string name="yes">Yes</string>
+	<string name="and">and</string>
+	<string name="developers">Developers</string>
+	<string name="choice_route_app">Choice an app below</string>
+	<string name="ask_open_maps_title">Open Maps?</string>
+	<string name="ask_open_maps_message">Do you want to open Maps application?</string>
+	<string name="alert_no_network_title">No connection</string>
+	<string name="alert_no_network_message">You are not connected to the internet. Please check your connection and try again.</string>
 </resources>
