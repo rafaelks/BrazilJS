@@ -1,4 +1,5 @@
 var TiSocial = require("dk.napp.social");
+var UI = require("/lib/UI/UI");
 var currentSharingDict = null;
 
 TiSocial.addEventListener("customActivity", function(e) {
@@ -63,6 +64,7 @@ var shareWithActivityView = function(dict) {
 var shareWithOptionDialog = function() {
 	var TiSMS = require("bencoding.sms").createSMSDialog();
 	var options = [];
+	var dict = currentSharingDict;
 
 	options.push(L("add_calendar"));
 
@@ -101,7 +103,7 @@ var shareWithOptionDialog = function() {
 					text: dict.message
 				});
 			case L("add_calendar"):
-				return addEventToCalendar();
+				return addEventToCalendar(dict);
 			case L("sms"):
 				TiSMS.setMessageBody(dict.message);
 				return TiSMS.open({
@@ -109,7 +111,7 @@ var shareWithOptionDialog = function() {
 				});
 			case L("email"):
 				return Ti.UI.createEmailDialog({
-					barColor: theme.ios.barColor,
+					barColor: UI.BAR_COLOR,
 					messageBody: dict.message
 				}).open();
 		}
