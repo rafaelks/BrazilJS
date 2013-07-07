@@ -57,6 +57,7 @@
         </manifest>
     </android>
     <modules>
+        <module platform="iphone" version="1.8">bencoding.sms</module>
         <module platform="iphone" version="1.6.2">dk.napp.social</module>
     </modules>
     <deployment-targets>

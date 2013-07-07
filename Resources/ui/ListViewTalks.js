@@ -12,6 +12,7 @@ var ListViewTalks = function(dict) {
 				rows.push( new RowTalk(talk) );
 			});
 			self.setData(rows);
+			dict.mainWindow.fireEvent("dataLoaded");
 		});
 	});
 

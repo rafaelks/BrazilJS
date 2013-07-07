@@ -69,7 +69,15 @@ var WinTalk = function(dict) {
 	self.add(tableView);
 
 	buttonActions.addEventListener("click", function() {
-
+		var TiActivity = require("/lib/TiActivity/TiActivity");
+		TiActivity.share({
+			description: i18n.getValue(obj.description),
+			endAt: obj.endAt,
+			message: L("share_talk"),
+			place: "Teatro Bourbon Country",
+			startAt: obj.startAt,
+			title: i18n.getValue(obj.name)
+		});
 	});
 
 	tableView.addEventListener("click", function(e) {

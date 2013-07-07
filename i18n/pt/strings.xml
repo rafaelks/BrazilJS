@@ -16,4 +16,13 @@
 	<string name="ask_open_maps_message">Deseja abrir o aplicativo Mapas?</string>
 	<string name="alert_no_network_title">Sem conexão</string>
 	<string name="alert_no_network_message">Você não está conectado à internet. Por favor, verifique a sua conexão e tente novamente.</string>
+	<string name="twitter">Compart. no Twitter</string>
+	<string name="facebook">Compart. no Facebook</string>
+	<string name="sms">Compart. por SMS</string>
+	<string name="email">Compart. por E-mail</string>
+	<string name="calendar">Calendário</string>
+	<string name="calendar_created_event">Evento criado em seu calendário</string
+	>
+	<string name="add_calendar">Adic. ao Calendário</string>
+	<string name="dialog_share_choices">O que você deseja?</string>
 </resources>

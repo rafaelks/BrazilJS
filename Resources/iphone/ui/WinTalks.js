@@ -4,7 +4,11 @@ var WinTalks = function(dict) {
 	var ListViewTalks = require("/ui/ListViewTalks");
 	var selectedRow;
 
+	var activityIndicator = Ti.UI.createActivityIndicator();
+	activityIndicator.show();
+
 	var self = UI.createWindow({
+		rightNavButton: activityIndicator,
 		title: L("talks")
 	});
 
@@ -32,6 +36,11 @@ var WinTalks = function(dict) {
 				selectedRow = null;
 			}
 		}, 200);
+	});
+
+	self.addEventListener("dataLoaded", function() {
+		activityIndicator.hide();
+		self.setRightNavButton(null);
 	});
 
 	return self;
