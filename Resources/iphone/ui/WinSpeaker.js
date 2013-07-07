@@ -17,7 +17,8 @@ var WinTalk = function(dict) {
 
 	if (obj.twitter != null && obj.twitter.length) {
 		rows.push( rowTwitter = UI.createTableViewRow({
-			type: "twitter"
+			type: "twitter",
+			link: "http://twitter.com/" + obj.twitter
 		}) );
 
 		rowTwitter.add( UI.createLabel({
@@ -37,7 +38,8 @@ var WinTalk = function(dict) {
 
 	if (obj.github != null && obj.github.length) {
 		rows.push( rowGitHub = UI.createTableViewRow({
-			type: "github"
+			type: "github",
+			link: "http://github.com/" + obj.github
 		}) );
 
 		rowGitHub.add( UI.createLabel({
@@ -57,7 +59,8 @@ var WinTalk = function(dict) {
 
 	if (obj.website != null && obj.website.length) {
 		rows.push( rowWebSite = UI.createTableViewRow({
-			type: "website"
+			type: "website",
+			link: obj.website
 		}) );
 
 		rowWebSite.add( UI.createLabel({
@@ -98,6 +101,13 @@ var WinTalk = function(dict) {
 		style: Ti.UI.iPhone.TableViewStyle.GROUPED
 	});
 	self.add(tableView);
+
+	tableView.addEventListener("click", function(e) {
+		var link = e.row.link;
+		if (link != null && link.length && Ti.Platform.canOpenURL(link)) {
+			Ti.Platform.openURL(link);
+		}
+	});
 
 	buttonActions.addEventListener("click", function() {
 
