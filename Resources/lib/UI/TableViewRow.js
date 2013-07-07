@@ -1,5 +1,6 @@
 var UI = require("/lib/UI/UI");
 var i18n = require("/lib/i18n/Remote");
+var TiDate = require("/lib/TiDate/TiDate");
 
 
 exports.talk = function(obj) {
@@ -10,21 +11,33 @@ exports.talk = function(obj) {
 		obj: obj
 	});
 
-	self.add( UI.createImageView({
-		bottom: 8,
-		height: 50,
-		image: obj.image,
+	var viewLabels = UI.createView({
+		bottom: 10,
+		layout: "vertical",
 		left: 8,
-		top: 8,
-		width: 50
-	}) );
+		top: 10
+	});
+	self.add(viewLabels);
 
 	// Talk title
-	self.add( UI.createLabel({
+	viewLabels.add( UI.createLabel({
 		font: { fontSize: 16, fontWeight: "bold" },
 		height: Ti.UI.SIZE,
-		left: 66,
+		left: 2,
 		text: i18n.getValue(obj.name),
+		right: 45
+	}) );
+
+	var speakersName = obj.speaker.map(function(speaker) {
+		return speaker.name
+	});
+
+	viewLabels.add( UI.createLabel({
+		color: "#999",
+		font: { fontSize: 14 },
+		height: Ti.UI.SIZE,
+		left: 2,
+		text: speakersName.join(" " + L("and") + " "),
 		right: 45
 	}) );
 
@@ -33,7 +46,7 @@ exports.talk = function(obj) {
 		font: { fontSize: 12 },
 		height: Ti.UI.SIZE,
 		right: 5,
-		text: "09:00",
+		text: TiDate.getHours(obj.startAt),
 		textAlign: "right"
 	}) );
 

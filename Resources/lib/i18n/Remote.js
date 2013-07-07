@@ -1,5 +1,5 @@
 var language = Ti.Locale.getCurrentLanguage();
-var defaultLanguage = "pt";
+var defaultLanguage = "en";
 
 exports.getValue = function(obj) {
 	var obj = obj || {};

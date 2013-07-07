@@ -1,9 +1,10 @@
 var WinTalk = function(dict) {
 	var UI = require("/lib/UI/UI");
 	var HeaderViewTalk = require("/ui/HeaderViewTalk");
+	var i18n = require("/lib/i18n/Remote");
 	var tab = dict.tab;
 	var obj = dict.obj || {};
-	var sections = [];
+	var rows = [];
 	var selectedRow;
 
 	var buttonActions = Ti.UI.createButton({
@@ -15,27 +16,32 @@ var WinTalk = function(dict) {
 		title: L("talk")
 	});
 
-	var rowSpeaker = UI.createTableViewRow({
-		hasChild: true,
-		height: Ti.UI.SIZE,
-		obj: obj.speaker[0]
+	obj.speaker.forEach(function(speaker) {
+		var row = UI.createTableViewRow({
+			type: "speaker",
+			hasChild: true,
+			height: Ti.UI.SIZE,
+			obj: speaker
+		});
+
+		row.add( UI.createImageView({
+			bottom: 5,
+			image: "/images/" + speaker.image,
+			height: 40,
+			left: 10,
+			top: 5,
+			width: 40
+		}) );
+
+		row.add( UI.createLabel({
+			font: { fontSize: 16 },
+			height: Ti.UI.SIZE,
+			left: 60,
+			text: speaker.name
+		}) );
+
+		rows.push(row);
 	});
-
-	rowSpeaker.add( UI.createImageView({
-		bottom: 5,
-		image: obj.image,
-		height: 40,
-		left: 10,
-		top: 5,
-		width: 40
-	}) );
-
-	rowSpeaker.add( UI.createLabel({
-		font: { fontSize: 16 },
-		height: Ti.UI.SIZE,
-		left: 60,
-		text: "Douglas Crockford"
-	}) );
 
 	var rowDescription = Ti.UI.createTableViewRow({
 		height: Ti.UI.SIZE,
@@ -48,13 +54,15 @@ var WinTalk = function(dict) {
 		height: Ti.UI.SIZE,
 		left: 10,
 		right: 10,
-		text: "Lorem ipsum Officia non reprehenderit aliqua eiusmod id ullamco Excepteur tempor dolor fugiat Duis nulla occaecat eu enim tempor cillum voluptate et fugiat consequat dolor culpa eu incididunt aliquip.",
+		text: i18n.getValue(obj.description),
 		top: 10
 	}) );
 
+	rows.push(rowDescription);
+
 	var tableView = UI.createTableView({
 		backgroundColor: "#FFF",
-		data: [rowSpeaker, rowDescription],
+		data: rows,
 		headerView: new HeaderViewTalk({ obj: obj }),
 		style: Ti.UI.iPhone.TableViewStyle.GROUPED
 	});
@@ -65,7 +73,7 @@ var WinTalk = function(dict) {
 	});
 
 	tableView.addEventListener("click", function(e) {
-		if (e.index === 0) {
+		if (e.row.type == "speaker") {
 			tableView.selectRow(e.index, { animated: false });
 			selectedRow = e.index;
 
