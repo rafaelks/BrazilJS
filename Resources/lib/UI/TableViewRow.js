@@ -4,20 +4,29 @@ var TiDate = require("/lib/TiDate/TiDate");
 
 
 exports.talk = function(obj) {
+	var hasSpeakers = (obj.speaker.length > 0);
+
 	var self = UI.createTableViewRow({
 		className: "talk",
-		hasChild: true,
-		height: Ti.UI.SIZE,
+		hasChild: hasSpeakers,
+		height: (hasSpeakers) ? Ti.UI.SIZE : 50,
 		obj: obj
 	});
 
 	var viewLabels = UI.createView({
-		bottom: 10,
 		layout: "vertical",
-		left: 8,
-		top: 10
+		left: 8
 	});
 	self.add(viewLabels);
+
+	if (!hasSpeakers) {
+		self.selectionStyle = Ti.UI.iPhone.TableViewCellSelectionStyle.NONE;
+	} else {
+		viewLabels.applyProperties({
+			bottom: 10,
+			top: 10
+		});
+	}
 
 	// Talk title
 	viewLabels.add( UI.createLabel({
@@ -28,24 +37,26 @@ exports.talk = function(obj) {
 		right: 45
 	}) );
 
-	var speakersName = obj.speaker.map(function(speaker) {
-		return speaker.name
-	});
+	if (hasSpeakers) {
+		var speakersName = obj.speaker.map(function(speaker) {
+			return speaker.name
+		});
 
-	viewLabels.add( UI.createLabel({
-		color: "#999",
-		font: { fontSize: 14 },
-		height: Ti.UI.SIZE,
-		left: 2,
-		text: speakersName.join(" " + L("and") + " "),
-		right: 45
-	}) );
+		viewLabels.add( UI.createLabel({
+			color: "#999",
+			font: { fontSize: 14 },
+			height: Ti.UI.SIZE,
+			left: 2,
+			text: speakersName.join(" " + L("and") + " "),
+			right: 45
+		}) );
+	}
 
 	self.add( UI.createLabel({
 		color: "#999",
 		font: { fontSize: 12 },
 		height: Ti.UI.SIZE,
-		right: 5,
+		right: (hasSpeakers) ? 5 : 25,
 		text: TiDate.getHours(obj.startAt),
 		textAlign: "right"
 	}) );
