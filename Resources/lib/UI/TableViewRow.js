@@ -7,15 +7,16 @@ exports.talk = function(obj) {
 	var hasSpeakers = (obj.speaker.length > 0);
 
 	var self = UI.createTableViewRow({
+		_hasChild: hasSpeakers,
 		className: "talk",
-		hasChild: hasSpeakers,
 		height: (hasSpeakers) ? Ti.UI.SIZE : 50,
 		obj: obj
 	});
 
 	var viewLabels = UI.createView({
 		layout: "vertical",
-		left: 8
+		left: 8,
+		right: (hasSpeakers) ? 45 : 65
 	});
 	self.add(viewLabels);
 
@@ -33,30 +34,35 @@ exports.talk = function(obj) {
 		font: { fontSize: 16, fontWeight: "bold" },
 		height: Ti.UI.SIZE,
 		left: 2,
-		text: i18n.getValue(obj.name),
-		right: 45
+		text: i18n.getValue(obj.name)
 	}) );
 
-	if (hasSpeakers) {
-		var speakersName = obj.speaker.map(function(speaker) {
-			return speaker.name
-		});
+	var speakersName = obj.speaker.map(function(speaker) {
+		return speaker.name
+	});
 
+	if (hasSpeakers) {
 		viewLabels.add( UI.createLabel({
-			color: "#999",
+			color: "#666",
 			font: { fontSize: 14 },
 			height: Ti.UI.SIZE,
 			left: 2,
-			text: speakersName.join(" " + L("and") + " "),
-			right: 45
+			text: speakersName.join(" " + L("and") + " ")
+		}) );
+
+		self.add( Ti.UI.createImageView({
+			height: 13,
+			image: "/images/Arrow-Details.png",
+			right: 8,
+			width: 8
 		}) );
 	}
 
 	self.add( UI.createLabel({
-		color: "#999",
+		color: "#666",
 		font: { fontSize: 12 },
 		height: Ti.UI.SIZE,
-		right: (hasSpeakers) ? 5 : 25,
+		right: 25,
 		text: TiDate.getHours(obj.startAt),
 		textAlign: "right"
 	}) );

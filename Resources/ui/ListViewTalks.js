@@ -1,6 +1,8 @@
 var ListViewTalks = function(dict) {
 	var UI = require("/lib/UI/UI");
+	var TiDate = require("/lib/TiDate/TiDate");
 	var RowTalk = require("/lib/UI/TableViewRow").talk;
+	var SectionTalks = require("/lib/UI/TableViewSection").talks;
 	var WSRequest = require("/lib/WS/WSRequest");
 
 	var rows = [];
@@ -8,10 +10,21 @@ var ListViewTalks = function(dict) {
 
 	dict.mainWindow.addEventListener("open", function() {
 		WSRequest.getTalks(function(data) {
+			var sectionsList = [];
+			var sections = {};
+
 			data.forEach(function(talk) {
-				rows.push( new RowTalk(talk) );
+				var date = TiDate.getDateFormatted(talk.startAt);
+
+				if (sections[date] == null) {
+					sections[date] = new SectionTalks(date);
+					sectionsList.push(sections[date]);
+				}
+
+				sections[date].add( new RowTalk(talk) );
 			});
-			self.setData(rows);
+
+			self.setData(sectionsList);
 			dict.mainWindow.fireEvent("dataLoaded");
 		});
 	});

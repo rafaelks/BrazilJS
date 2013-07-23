@@ -18,15 +18,17 @@ var WinTalks = function(dict) {
 	self.add(tableView);
 
 	tableView.addEventListener("click", function(e) {
-		selectedRow = e.index;
-		tableView.selectRow(e.index, { animated: false });
+		if (e.row._hasChild) {
+			selectedRow = e.index;
+			tableView.selectRow(e.index, { animated: false });
 
-		var obj = e.rowData.obj;
-		var WinTalk = require("/ui/WinTalk");
-		tab.open( new WinTalk({
-			obj: obj,
-			tab: tab
-		}) );
+			var obj = e.rowData.obj;
+			var WinTalk = require("/ui/WinTalk");
+			tab.open( new WinTalk({
+				obj: obj,
+				tab: tab
+			}) );
+		}
 	});
 
 	self.addEventListener("focus", function() {
