@@ -6,12 +6,7 @@ var WinTalk = function(dict) {
 	var rows = [];
 	var rowTwitter, rowGitHub, rowWebSite;
 
-	var buttonActions = Ti.UI.createButton({
-		systemButton: Ti.UI.iPhone.SystemButton.ACTION
-	});
-
 	var self = UI.createWindow({
-		rightNavButton: buttonActions,
 		title: obj.name
 	});
 
@@ -107,10 +102,6 @@ var WinTalk = function(dict) {
 		if (link != null && link.length && Ti.Platform.canOpenURL(link)) {
 			Ti.Platform.openURL(link);
 		}
-	});
-
-	buttonActions.addEventListener("click", function() {
-
 	});
 
 	return self;
