@@ -43,22 +43,25 @@ var WinTalk = function(dict) {
 		rows.push(row);
 	});
 
-	var rowDescription = Ti.UI.createTableViewRow({
-		height: Ti.UI.SIZE,
-		selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
-	});
+	var description = i18n.getValue(obj.description);
+	if (description.length) {
+		var rowDescription = Ti.UI.createTableViewRow({
+			height: Ti.UI.SIZE,
+			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
+		});
 
-	rowDescription.add( UI.createLabel({
-		bottom: 10,
-		font: { fontSize: 16 },
-		height: Ti.UI.SIZE,
-		left: 10,
-		right: 10,
-		text: i18n.getValue(obj.description),
-		top: 10
-	}) );
+		rowDescription.add( UI.createLabel({
+			bottom: 10,
+			font: { fontSize: 16 },
+			height: Ti.UI.SIZE,
+			left: 10,
+			right: 10,
+			text: description,
+			top: 10
+		}) );
 
-	rows.push(rowDescription);
+		rows.push(rowDescription);
+	}
 
 	var tableView = UI.createTableView({
 		backgroundColor: "#FFF",
@@ -73,7 +76,7 @@ var WinTalk = function(dict) {
 		TiActivity.share({
 			description: i18n.getValue(obj.description),
 			endAt: obj.endAt,
-			message: L("share_talk"),
+			message: String.format(L("share_talk"), i18n.getValue(obj.name)),
 			place: "Teatro Bourbon Country",
 			startAt: obj.startAt,
 			title: i18n.getValue(obj.name)
