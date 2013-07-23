@@ -16,7 +16,7 @@ exports.talk = function(obj) {
 	var viewLabels = UI.createView({
 		layout: "vertical",
 		left: 8,
-		right: (hasSpeakers) ? 45 : 65
+		right: 65
 	});
 	self.add(viewLabels);
 
