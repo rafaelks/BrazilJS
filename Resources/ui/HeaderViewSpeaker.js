@@ -7,13 +7,18 @@ var HeaderViewTalk = function(dict) {
 		height: Ti.UI.SIZE
 	});
 
+	self.add( UI.createImageView({
+		image: "/images/" + obj.image,
+		height: 100,
+		top: 10,
+		width: 100
+	}) );
+
 	self.add( UI.createLabel({
-		font: { fontSize: 18, fontWeight: "bold" },
+		font: { fontSize: 18, fontWeight: "100" },
 		height: Ti.UI.SIZE,
-		left: 15,
-		right: 15,
 		text: obj.name,
-		top: 20
+		top: 120
 	}) );
 
 	return self;
