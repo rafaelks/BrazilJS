@@ -67,7 +67,8 @@ var WinTalk = function(dict) {
 		backgroundColor: "#FFF",
 		data: rows,
 		headerView: new HeaderViewTalk({ obj: obj }),
-		style: Ti.UI.iPhone.TableViewStyle.GROUPED
+		style: Ti.UI.iPhone.TableViewStyle.GROUPED,
+		separatorStyle:Ti.UI.iPhone.TableViewSeparatorStyle.NONE
 	});
 	self.add(tableView);
 
