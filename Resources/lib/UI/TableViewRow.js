@@ -22,6 +22,9 @@ exports.talk = function(obj) {
 
 	if (!hasSpeakers) {
 		self.selectionStyle = Ti.UI.iPhone.TableViewCellSelectionStyle.NONE;
+		self.applyProperties({
+			backgroundColor: '#f0f0f0'
+		});
 	} else {
 		viewLabels.applyProperties({
 			bottom: 10,
@@ -32,6 +35,7 @@ exports.talk = function(obj) {
 	// Talk title
 	viewLabels.add( UI.createLabel({
 		font: { fontSize: 16, fontWeight: "bold" },
+		color: hasSpeakers ? '#000000' : '#666666',
 		height: Ti.UI.SIZE,
 		left: 2,
 		text: i18n.getValue(obj.name)
