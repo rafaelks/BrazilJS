@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.rafaelks.braziljs</id>
+    <id>net.nyvra.braziljs</id>
     <name>BrazilJS</name>
     <version>1.0</version>
     <publisher>rafaelks</publisher>
