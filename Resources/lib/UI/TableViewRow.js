@@ -75,20 +75,16 @@ exports.talk = function(obj) {
 };
 
 
-exports.developer = function(name, twitter) {
-	var self = UI.createTableViewRow();
+exports.twitter = function(twitter) {
+	var self = UI.createTableViewRow({
+		twitter: twitter
+	});
 
 	self.add( UI.createLabel({
+		font: { fontSize: 16, fontWeight: "bold" },
 		left: 10,
-		text: name,
-		width: "47%"
-	}) );
-
-	self.add( UI.createLabel({
-		right: 10,
 		text: "@" + twitter,
-		textAlign: "right",
-		width: "47%"
+		textAlign: "left"
 	}) );
 
 	return self;
