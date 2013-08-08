@@ -62,7 +62,7 @@ var WinTalk = function(dict) {
 			font: { fontSize: 16, fontWeight: "bold" },
 			height: Ti.UI.SIZE,
 			left: 10,
-			text: "Site"
+			text: "Web"
 		}) );
 
 		rowWebSite.add( UI.createLabel({
