@@ -9,3 +9,14 @@ exports.getTalks = function(callback) {
 		}
 	});
 };
+
+
+exports.registerPushToken = function(token, callback) {
+	var platform = (Ti.Platform.osname === "android") ? "android" : "ios";
+
+	WS._request({
+		url: "device/" + platform + "/" + token,
+		type: "POST",
+		onload: callback
+	});
+};

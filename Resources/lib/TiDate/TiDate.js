@@ -32,3 +32,8 @@ exports.getDateFormatted = function(date) {
 	var d = new Date(date);
 	return d.getDate() + of + months[d.getMonth()] + of + d.getFullYear();
 }
+
+exports.getDateFormattedWithoutYear = function(date) {
+	var d = new Date(date);
+	return d.getDate() + of + months[d.getMonth()];
+}
