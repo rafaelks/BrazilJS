@@ -15,4 +15,28 @@
 	<string name="ask_open_maps_message">Do you want to open Maps application?</string>
 	<string name="alert_no_network_title">No connection</string>
 	<string name="alert_no_network_message">You are not connected to the internet. Please check your connection and try again.</string>
+	<string name="twitter">Share on Twitter</string>
+	<string name="facebook">Share on Facebook</string>
+	<string name="sms">Share by SMS</string>
+	<string name="email">Share by Email</string>
+	<string name="calendar">Calendar</string>
+	<string name="calendar_created_event">Event created in you Calendar</string
+	>
+	<string name="add_calendar">Add to Calendar</string>
+	<string name="dialog_share_choices">What do you wanna do?</string>
+	<string name="january">January</string>
+	<string name="february">February</string>
+	<string name="march">March</string>
+	<string name="april">April</string>
+	<string name="may">May</string>
+	<string name="juny">Juny</string>
+	<string name="july">July</string>
+	<string name="august">August</string>
+	<string name="september">September</string>
+	<string name="october">October</string>
+	<string name="november">November</string>
+	<string name="december">December</string>
+	<string name="of">of</string>
+	<string name="share_talk">I will watch '%s' in @braziljs 2013!</string>
+	<string name="organizers">Organizers</string>
 </resources>

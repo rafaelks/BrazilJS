@@ -2,7 +2,6 @@
 <resources>
 	<string name="talks">Palestras</string>
 	<string name="talk">Palestra</string>
-	<string name="favorites">Favoritas</string>
 	<string name="location">Local</string>
 	<string name="about">Sobre</string>
 	<string name="maps">Mapa</string>
@@ -39,4 +38,5 @@
 	<string name="december">Dezembro</string>
 	<string name="of">de</string>
 	<string name="share_talk">Vou assitir '%s' no @braziljs 2013!</string>
+	<string name="organizers">Organizadores</string>
 </resources>
