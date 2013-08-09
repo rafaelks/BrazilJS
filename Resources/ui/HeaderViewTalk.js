@@ -25,7 +25,7 @@ var HeaderViewTalk = function(dict) {
 		height: Ti.UI.SIZE,
 		left: 15,
 		right: 15,
-		text: TiDate.getDateFormattedWithoutYear(obj.startAt) + " - " + TiDate.getHours(obj.startAt),
+		text: TiDate.getDateFormatted(obj.startAt) + " - " + TiDate.getHours(obj.startAt),
 		top: 20
 	}) );
 

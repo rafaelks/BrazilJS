@@ -13,6 +13,16 @@ var months = [
 	L("december")
 ];
 
+var days = [
+	L("sunday"),
+	L("monday"),
+	L("tuesday"),
+	L("wednesday"),
+	L("thursday"),
+	L("friday"),
+	L("saturday")
+];
+
 var of = " " + L("of") + " ";
 
 
@@ -30,10 +40,5 @@ exports.getHours = function(date) {
 
 exports.getDateFormatted = function(date) {
 	var d = new Date(date);
-	return d.getDate() + of + months[d.getMonth()] + of + d.getFullYear();
-}
-
-exports.getDateFormattedWithoutYear = function(date) {
-	var d = new Date(date);
-	return d.getDate() + of + months[d.getMonth()];
+	return days[d.getDay()] + ", " + d.getDate() + of + months[d.getMonth()];
 }
