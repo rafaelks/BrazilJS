@@ -26,7 +26,7 @@ var HeaderViewTalk = function(dict) {
 		left: 15,
 		right: 15,
 		text: TiDate.getDateFormatted(obj.startAt) + " - " + TiDate.getHours(obj.startAt),
-		top: 20
+		top: 15
 	}) );
 
 	return self;
