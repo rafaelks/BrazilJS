@@ -5,7 +5,7 @@ var ApplicationWindow = function() {
 	var WinLocation = require("/ui/WinLocation");
 
 	var self = UI.createTabGroup({
-		activeTabIconTint: UI.BAR_COLOR
+		activeTabIconTint: "red"
 	});
 
 	var tabTalks = Ti.UI.createTab({

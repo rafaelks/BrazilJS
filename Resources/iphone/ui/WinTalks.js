@@ -7,6 +7,10 @@ var WinTalks = function(dict) {
 	var activityIndicator = Ti.UI.createActivityIndicator();
 	activityIndicator.show();
 
+	var buttonRefresh = Ti.UI.createButton({
+		systemButton: Ti.UI.iPhone.SystemButton.REFRESH
+	});
+
 	var self = UI.createWindow({
 		rightNavButton: activityIndicator,
 		title: L("talks")
@@ -40,9 +44,17 @@ var WinTalks = function(dict) {
 		}, 200);
 	});
 
+	self.addEventListener("dataError", function() {
+		self.setRightNavButton(buttonRefresh);
+	});
+
 	self.addEventListener("dataLoaded", function() {
-		activityIndicator.hide();
-		self.setRightNavButton(null);
+		self.setRightNavButton(buttonRefresh);
+	});
+
+	buttonRefresh.addEventListener("click", function() {
+		tableView.fireEvent("dataReload");
+		self.setRightNavButton(activityIndicator);
 	});
 
 	return self;

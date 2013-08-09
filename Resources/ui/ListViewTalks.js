@@ -8,25 +8,38 @@ var ListViewTalks = function(dict) {
 	var rows = [];
 	var self = UI.createTableView();
 
-	dict.mainWindow.addEventListener("open", function() {
-		WSRequest.getTalks(function(data) {
-			var sectionsList = [];
-			var sections = {};
+	var loadData = function() {
+		WSRequest.getTalks({
+			onload: function(data) {
+				var sectionsList = [];
+				var sections = {};
 
-			data.forEach(function(talk) {
-				var date = TiDate.getDateFormatted(talk.startAt);
+				data.forEach(function(talk) {
+					var date = TiDate.getDateFormatted(talk.startAt);
 
-				if (sections[date] == null) {
-					sections[date] = new SectionTalks(date);
-					sectionsList.push(sections[date]);
-				}
+					if (sections[date] == null) {
+						sections[date] = new SectionTalks(date);
+						sectionsList.push(sections[date]);
+					}
 
-				sections[date].add( new RowTalk(talk) );
-			});
+					sections[date].add( new RowTalk(talk) );
+				});
 
-			self.setData(sectionsList);
-			dict.mainWindow.fireEvent("dataLoaded");
+				self.setData(sectionsList);
+				dict.mainWindow.fireEvent("dataLoaded");
+			},
+			onerror: function() {
+				dict.mainWindow.fireEvent("dataError");
+			}
 		});
+	}
+
+	self.addEventListener("dataReload", function() {
+		loadData();
+	});
+
+	dict.mainWindow.addEventListener("open", function() {
+		loadData();
 	});
 
 	return self;

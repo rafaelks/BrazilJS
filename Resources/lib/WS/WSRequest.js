@@ -1,11 +1,12 @@
 var WS = require("/lib/WS/WS");
 
-exports.getTalks = function(callback) {
+exports.getTalks = function(dict) {
 	WS._request({
 		url: "talks",
 		type: "GET",
+		onerror: dict.onerror,
 		onload: function(response) {
-			callback( response.data );
+			dict.onload( response.data );
 		}
 	});
 };
