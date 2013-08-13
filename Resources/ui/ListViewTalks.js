@@ -6,7 +6,9 @@ var ListViewTalks = function(dict) {
 	var WSRequest = require("/lib/WS/WSRequest");
 
 	var rows = [];
-	var self = UI.createTableView();
+	var self = UI.createTableView({
+		separatorColor: "#BEBEBE"
+	});
 
 	var loadData = function() {
 		WSRequest.getTalks({

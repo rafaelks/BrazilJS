@@ -2,6 +2,7 @@ var HeaderViewTalk = function(dict) {
 	var obj = dict.obj || {};
 
 	var UI = require("/lib/UI/UI");
+	var P = require("/lib/Platform");
 	var i18n = require("/lib/i18n/Remote");
 	var TiDate = require("/lib/TiDate/TiDate");
 
@@ -20,6 +21,7 @@ var HeaderViewTalk = function(dict) {
 	}) );
 
 	self.add( UI.createLabel({
+		bottom: (P.isAndroid) ? 15 : 0,
 		color: "#666",
 		font: { fontSize: 15 },
 		height: Ti.UI.SIZE,

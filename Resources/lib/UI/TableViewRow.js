@@ -1,6 +1,7 @@
 var UI = require("/lib/UI/UI");
 var i18n = require("/lib/i18n/Remote");
 var TiDate = require("/lib/TiDate/TiDate");
+var P = require("/lib/Platform");
 
 
 exports.talk = function(obj) {
@@ -8,7 +9,6 @@ exports.talk = function(obj) {
 
 	var self = UI.createTableViewRow({
 		_hasChild: hasSpeakers,
-		className: "talk",
 		height: (hasSpeakers) ? Ti.UI.SIZE : 50,
 		obj: obj
 	});
@@ -54,19 +54,21 @@ exports.talk = function(obj) {
 			text: speakersName.join(" " + L("and") + " ")
 		}) );
 
-		self.add( Ti.UI.createImageView({
-			height: 13,
-			image: "/images/Arrow-Details.png",
-			right: 8,
-			width: 8
-		}) );
+		if (!P.isAndroid) {
+			self.add( Ti.UI.createImageView({
+				height: 13,
+				image: "/images/Arrow-Details.png",
+				right: 8,
+				width: 8
+			}) );
+		}
 	}
 
 	self.add( UI.createLabel({
 		color: "#666",
 		font: { fontSize: 12 },
 		height: Ti.UI.SIZE,
-		right: 25,
+		right: (P.isAndroid) ? 10 : 25,
 		text: TiDate.getHours(obj.startAt),
 		textAlign: "right"
 	}) );

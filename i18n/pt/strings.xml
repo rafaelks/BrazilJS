@@ -46,4 +46,6 @@
 	<string name="thursday">quinta-feira</string>
 	<string name="friday">sexta-feira</string>
 	<string name="saturday">sábado</string>
+
+	<string name="map">Mapa</string>
 </resources>
