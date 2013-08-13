@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="Theme.Braziljs" parent="@android:style/Theme.Holo.Light">
+
+    <item name="android:listViewStyle">@style/ListViewBrazilJS</item>
+
+    <item name="android:listViewWhiteStyle">@style/ListViewBrazilJS.White</item>
+
+    <item name="android:spinnerItemStyle">@style/SpinnerItemBrazilJS</item>
+
+  </style>
+
+</resources>
