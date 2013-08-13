@@ -101,7 +101,7 @@ var WinTalk = function(dict) {
 					var eventCalendar = calendar.createEvent({
 						title: title,
 						notes: description,
-						location: obj.place,
+						location: "Teatro Bourbon Country",
 						begin: new Date(obj.startAt),
 						end: new Date(obj.endAt)
 					});
@@ -160,7 +160,14 @@ var WinTalk = function(dict) {
 			});
 
 			buttonShare.addEventListener("click", function() {
-				UIUtils.route(obj._id, latitude, longitude, obj.address);
+				var intent = Ti.Android.createIntent({
+					action: Ti.Android.ACTION_SEND,
+					type: "text/plain"
+				});
+
+				intent.putExtra(Ti.Android.EXTRA_TEXT, String.format(L("share_talk"), i18n.getValue(obj.name)));
+				intent.addCategory(Ti.Android.CATEGORY_DEFAULT);
+				Ti.Android.currentActivity.startActivity(intent);
 			});
 		};
 
