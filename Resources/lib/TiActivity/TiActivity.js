@@ -1,5 +1,6 @@
-var TiSocial = require("dk.napp.social");
 var UI = require("/lib/UI/UI");
+var P = require("/lib/Platform");
+var TiSocial = require("dk.napp.social");
 var currentSharingDict = null;
 
 TiSocial.addEventListener("customActivity", function(e) {
@@ -48,6 +49,8 @@ var addEventToCalendar = function(dict) {
 		buttonNames: [L("ok")]
 	}).show();
 };
+
+exports.addEventToCalendar = addEventToCalendar;
 
 var shareWithActivityView = function(dict) {
 	return TiSocial.activityView({
