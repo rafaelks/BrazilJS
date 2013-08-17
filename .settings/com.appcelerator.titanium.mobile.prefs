@@ -1,0 +1,10 @@
+android/ATTR_MINIFY=true
+android/ATTR_PROJECT_NAME=BrazilJS
+android/abi=x86
+android/distribute_path=/Users/rafaelks/Desktop
+android/keystore_alias=BrazilJS
+android/keystore_password=+4A6A7sk^\:|7e.pjwo.4e0fOpbrtDGBbl{dFYZt4LyvbviZL'g
+android/keystore_path=/Users/rafaelks/Projects/BrazilJS/Keys/Android.keystore
+android/recent_output=/Users/rafaelks/Desktop
+android/sdk_version=Android 4.2.2
+eclipse.preferences.version=1
