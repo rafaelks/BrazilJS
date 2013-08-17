@@ -1,4 +1,4 @@
-var isAndroid = (Ti.Platform.osname === "androi");
+var isAndroid = (Ti.Platform.osname === "android");
 
 exports.route = function(latitude, longitude, address) {
 	var optionsTitles = [];

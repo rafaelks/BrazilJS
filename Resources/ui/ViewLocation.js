@@ -1,5 +1,6 @@
 var ViewLocation = function(dict) {
 	var UI = require("/lib/UI/UI");
+	var P = require("/lib/Platform");
 
 	var PLACE_LATITUDE = -30.0228728;
 	var PLACE_LONGITUDE = -51.1621618;
@@ -14,6 +15,7 @@ var ViewLocation = function(dict) {
 	});
 
 	var self = UI.createMapView({
+		animate: false,
 		annotations: [annotation],
 		region: {
 			latitudeDelta: 0.01,
@@ -21,6 +23,11 @@ var ViewLocation = function(dict) {
 			latitude: PLACE_LATITUDE,
 			longitude: PLACE_LONGITUDE
 		}
+	});
+
+	self.addEventListener("makeRoute", function() {
+		var TiRoute = require("/lib/TiRoute/TiRoute");
+		TiRoute.route(PLACE_LATITUDE, PLACE_LONGITUDE, PLACE_ADDRESS);
 	});
 
 	self.addEventListener("click", function(e) {
@@ -32,6 +39,7 @@ var ViewLocation = function(dict) {
 
 	dict.mainWindow.addEventListener("focus", function() {
 		self.selectAnnotation(annotation);
+		self.animate = true;
 	});
 
 	return self;
