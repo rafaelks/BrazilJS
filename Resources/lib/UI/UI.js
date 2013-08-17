@@ -43,7 +43,9 @@ exports.createWindow = function(dict) {
 	if (isAndroid && properties.actionBarBackButton == true) {
 		win.addEventListener("open", function() {
 			var self = this;
-			var actionBar = self.getActivity().actionBar;
+			var activity = self.getActivity();
+			var actionBar = activity.actionBar;
+
 			if (actionBar) {
 				actionBar.setTitle( properties.title );
 				actionBar.setDisplayHomeAsUp(true);
@@ -51,6 +53,8 @@ exports.createWindow = function(dict) {
 					self.close();
 				};
 			}
+
+			activity.invalidateOptionsMenu();
 		});
 	}
 

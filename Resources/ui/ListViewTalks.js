@@ -2,7 +2,7 @@ var ListViewTalks = function(dict) {
 	var UI = require("/lib/UI/UI");
 	var TiDate = require("/lib/TiDate/TiDate");
 	var RowTalk = require("/lib/UI/TableViewRow").talk;
-	var SectionTalks = require("/lib/UI/TableViewSection").talks;
+	var SectionTalks = require("/lib/UI/TableViewSection").gray;
 	var WSRequest = require("/lib/WS/WSRequest");
 
 	var rows = [];

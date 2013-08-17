@@ -1,7 +1,7 @@
 var UI = require("/lib/UI/UI");
 
 
-exports.talks = function(date) {
+exports.gray = function(title) {
 	var headerView = UI.createView({
 		backgroundColor: "#B4B4B4",
 		height: 30,
@@ -21,7 +21,7 @@ exports.talks = function(date) {
 		left: 10,
 		shadowColor: "#FFF",
 		shadowOffset: { x: 0, y: 1},
-		text: date
+		text: title
 	}) );
 
 	headerView.add( UI.createView({
