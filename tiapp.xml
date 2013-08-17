@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ti:app xmlns:ti="http://ti.appcelerator.org">
+<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>net.nyvra.braziljs</id>
     <name>BrazilJS</name>
     <version>1.0.1</version>
@@ -39,11 +38,8 @@
         <manifest android:versionCode="1" android:versionName="1.0.1">
             <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16"/>
             <application android:screenOrientation="portrait" android:theme="@style/Theme.Braziljs">
-                <meta-data
-                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDvn3gql3YALnEmod6M1hBTyToFvASV3ug"/>
+                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAJvJHX6JJIj6at5k5UpGbIqfAH4GzZ528"/>
             </application>
-            <!-- Phone Calls Permissions -->
-            <uses-permission android:name="android.permission.CALL_PHONE"/>
             <!-- Google Maps API V2 -->
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -51,8 +47,7 @@
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
             <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
             <uses-permission android:name="com.rafaelks.braziljs.permission.MAPS_RECEIVE"/>
-            <permission
-                android:name="com.rafaelks.braziljs.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+            <permission android:name="com.rafaelks.braziljs.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
             <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
         </manifest>
     </android>
