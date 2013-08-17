@@ -50,5 +50,6 @@
 	<string name="map">Mapa</string>
 	<string name="share">Compartilhar</string>
 	<string name="event_created">Evento criado</string>
+	<string name="directions">Direções</string>
 	<string name="no_calendars">Ops, parece que você não tem nenhum calendário configurado.</string>
 </resources>

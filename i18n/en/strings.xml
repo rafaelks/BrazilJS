@@ -46,4 +46,9 @@
 	<string name="thursday">thursday</string>
 	<string name="friday">friday</string>
 	<string name="saturday">saturday</string>
+	<string name="map">Map</string>
+	<string name="share">Share</string>
+	<string name="event_created">Event created</string>
+	<string name="directions">Directions</string>
+	<string name="no_calendars">Ops, you haven't any Calendar account in your phone.</string>
 </resources>
