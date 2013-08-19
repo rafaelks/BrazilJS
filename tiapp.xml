@@ -16,6 +16,7 @@
     <analytics>false</analytics>
     <guid>70ae27d6-b604-4ff8-b0f9-ac7cf85c0735</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="ti.android.bug2373.disableDetection" type="bool">true</property>
     <ios>
         <plist>
             <min-ios-ver>5.0</min-ios-ver>
@@ -35,7 +36,7 @@
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <tool-api-level>14</tool-api-level>
-        <manifest android:versionCode="8" android:versionName="1.0.1">
+        <manifest android:versionCode="9" android:versionName="1.0.1">
             <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16"/>
             <application android:screenOrientation="portrait" android:theme="@style/Theme.Braziljs">
                 <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAJvJHX6JJIj6at5k5UpGbIqfAH4GzZ528"/>
